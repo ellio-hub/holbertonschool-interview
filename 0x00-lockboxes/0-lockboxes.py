@@ -20,7 +20,10 @@ def canUnlockAll(boxes):
         return False
 
     keys = [0]
-    keys.extend(boxes[0])
+    for i in range(len(boxes[0])):
+        if boxes[0][i] < len(boxes):
+            keys.append(boxes[0][i])
+            break
     for i in keys:
         for d in range(len(boxes[i])):
             if not lookup(keys, boxes[i][d]) and boxes[i][d] < len(boxes):
