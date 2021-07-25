@@ -14,11 +14,11 @@ def canUnlockAll(boxes):
         [bool]: true if all boxes can be ope
     """
     if type(boxes) is not list or type(boxes[0]) is not list\
-        or (len(boxes[0]) == 1 and boxes[0][0] == 0)\
             or len(boxes) == 0 or len(boxes[0]) == 0\
             or type(boxes[0][0]) is not int:
         return False
-
+    if (len(boxes[0]) == 1 and boxes[0][0] == 0):
+        return True
     keys = [0]
     for i in range(len(boxes[0])):
         if boxes[0][i] < len(boxes):
