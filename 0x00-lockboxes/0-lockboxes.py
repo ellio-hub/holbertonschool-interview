@@ -22,8 +22,12 @@ def canUnlockAll(boxes):
     keys = [0]
     keys.extend(boxes[0])
     for i in keys:
+        print(keys)
+        print(len(boxes))
+        print("i = {}".format(i))
+        print("length = {}".format(len(boxes[i])))
         for d in range(len(boxes[i])):
-            if not lookup(keys, boxes[i][d]):
+            if not lookup(keys, boxes[i][d]) and boxes[i][d] < len(boxes):
                 keys.append(boxes[i][d])
     return check(boxes, keys)
 
